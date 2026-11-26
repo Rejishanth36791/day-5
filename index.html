@@ -3,27 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skeleton Loading - Day 5</title>
-  <!--Tailwind CSS via CDN-->
+  <title>Skeleton Loading Animation</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
 
   <div id="logoCard" class="bg-white p-6 rounded-2xl shadow-lg w-72 text-center">
 
-  <!--SKELETON LOADING-->
-  <div id="skeleton" class="animate-pulse">
-    <!--Logo / Image placeholder-->
-    <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto"></div>
+    <!--Skeleton Loading-->
+    <div id="skeleton" class="animate-pulse">
+      <!--Logo Circle-->
+      <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto"></div>
+      <!--Logo Name-->
+      <div class="h-4 bg-gray-300 rounded mt-6"></div>
+      <!--Small Text-->
+      <div class="h-4 w-32 bg-gray-300 rounded mt-3 mx-auto"></div>
+    </div>
 
-    <!--Title text placeholder-->
-    <div class="h-4 bg-gray-300 rounded mt-6"></div>
+    <!--Real Content-->
+    <div id="real-content" class="hidden">
+      <div class="w-24 h-24 rounded-full bg-indigo-600 text-white flex items-center justify-center text-2xl font-bold mx-auto">
+        TS
+      </div>
+      <h2 class="text-lg font-bold text-gray-800 mt-6">Tech Studio</h2>
+      <p class="text-sm text-gray-500 mt-2">Modern Web Solutions</p>
+    </div>
 
-    <!--Smaller text placeholder-->
-    <div class="h-4 w-32 bg-gray-300 rounded mt-3 mx-auto"></div>
   </div>
 
-</div>
+  <script>
+    // Simulate API Loading
+    setTimeout(() => {
+      // Hide skeleton
+      document.getElementById("skeleton").classList.add("hidden");
+
+      // Show real content
+      document.getElementById("real-content").classList.remove("hidden");
+    }, 3000);
+  </script>
 
 </body>
 </html>

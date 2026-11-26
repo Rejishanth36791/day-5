@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skeleton Loading Layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="w-full max-w-4xl">
+
+    <!--SKELETON LOADING-->
+    <div id="skeleton" class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-pulse">
+
+      <!--Left Skeleton Card-->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden divide-y divide-gray-200">
+        <div class="p-4 space-y-4">
+          <div class="h-52 w-full bg-gray-200 rounded-lg"></div>
+          <div class="flex items-center justify-between gap-4">
+            <div class="space-y-2 flex-1">
+              <div class="h-3 w-24 bg-gray-200 rounded-full"></div>
+              <div class="h-3 w-28 bg-gray-200 rounded-full"></div>
+            </div>
+            <div class="h-8 w-28 bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="p-4 space-y-2.5">
+          <div class="h-3 w-10/12 bg-gray-200 rounded-full"></div>
+          <div class="h-3 w-5/12 bg-gray-200 rounded-full"></div>
+          <div class="h-3 w-8/12 bg-gray-200 rounded-full"></div>
+          <div class="h-3 w-6/12 bg-gray-200 rounded-full"></div>
+        </div>
+
+        <div class="p-4">
+          <div class="h-8 w-full bg-gray-200 rounded-full"></div>
+        </div>
+      </div>
+
+      <!--Right Skeleton Card-->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden divide-y divide-gray-200 flex flex-col">
+        <div class="p-4 flex items-center justify-between gap-4">
+          <div class="space-y-2.5 flex-1">
+            <div class="h-3 w-11/12 bg-gray-200 rounded-full"></div>
+            <div class="h-3 w-7/12 bg-gray-200 rounded-full"></div>
+          </div>
+          <div class="w-14 h-14 bg-gray-200 rounded-full shrink-0"></div>
+        </div>
+
+        <div class="p-4 flex-1 flex">
+          <div class="w-full min-h-[260px] bg-gray-200 rounded-lg"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!--REAL CONTENT-->
+    <div id="real-content" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!--Left Real Card-->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden divide-y divide-gray-200">
+        <div class="p-4 space-y-4">
+          <div class="h-52 w-full bg-indigo-100 text-indigo-700 font-semibold rounded-lg flex items-center justify-center">
+            Featured Banner Image
+          </div>
+          <div class="flex items-center justify-between gap-4">
+            <div>
+              <p class="text-sm font-semibold text-gray-800">UI Design</p>
+              <p class="text-xs text-gray-500">Day 5 • Tailwind</p>
+            </div>
+            <button class="px-4 py-1.5 text-sm font-medium bg-indigo-600 text-white rounded-full hover:bg-indigo-700">
+              View More
+            </button>
+          </div>
+        </div>
+
+        <div class="p-4 space-y-1.5 text-sm text-gray-600">
+          <p>Skeleton screens improve perceived loading speed.</p>
+          <p>They match the real layout.</p>
+          <p>Users see structure right away.</p>
+          <p>Built with Tailwind CSS.</p>
+        </div>
+
+        <div class="p-4">
+          <button class="w-full py-2 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800">
+            Continue to Lesson
+          </button>
+        </div>
+      </div>
+
+      <!--Right Real Card-->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden divide-y divide-gray-200 flex flex-col">
+        <div class="p-4 flex items-center justify-between gap-4">
+          <div>
+            <h2 class="text-base font-bold text-gray-800">Profile & Preview</h2>
+            <p class="text-xs text-gray-500">Live card preview</p>
+          </div>
+          <div class="w-14 h-14 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center shrink-0">
+            JD
+          </div>
+        </div>
+
+        <div class="p-4 flex-1 flex">
+          <div class="w-full min-h-[260px] bg-slate-100 text-slate-600 font-medium rounded-lg flex items-center justify-center">
+            Tall Content / Poster Area
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    // Simulate API Loading for 3 seconds
+    setTimeout(() => {
+      document.getElementById("skeleton").classList.add("hidden");
+      document.getElementById("real-content").classList.remove("hidden");
+    }, 3000);
+  </script>
+
+</body>
+</html>
